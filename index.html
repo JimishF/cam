@@ -1,0 +1,18 @@
+<html>
+<body>
+<center>
+<input type="file" id="file" accept="image/*" capture="camera" />
+<br>
+<div class='box'><img id="image" width="300" /></div>
+</center>
+<script>
+document.getElementById("file").onchange = function () {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById("image").src = e.target.result;
+    };	
+    reader.readAsDataURL(this.files[0]);
+};
+</script>
+</body>
+</html>
